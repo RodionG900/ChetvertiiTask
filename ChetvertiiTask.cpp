@@ -31,11 +31,7 @@ int main()
     str += " ";
     while (str.find(" ") != string::npos) {
         string sub = str.substr(0, str.find(" "));
-        bool l = 0;
-        for (auto b : sub.substr(1)) {
-            if (b == sub[0]) l = 1;
-        }
-        if (l) cout << sub << " ";
+        if (sub.substr(1).find(sub[0])!= string::npos) cout << sub << " ";
         str = str.substr(str.find(" ") + 1);
     }
     cout << "\n\n\n";
